@@ -179,6 +179,8 @@ public class TextToSpeechAPI {
                                 ttsDoneUtterancesCount.wait();
                             }
                         }
+                    } catch (InterruptedException e) {
+                        mTts.stop();
                     } catch (Exception e) {
                         TermuxApiLogger.error("TTS error", e);
                     }
